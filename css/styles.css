@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,13 @@
 body, html {
     height: 100%;
     background-color: #646464;
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+body {
+    font-size: 1rem;
+    font-family: monospace
 }
 
 section {
@@ -21,12 +27,11 @@ section {
 .container {
     background-color: #333;
     padding: 20px;
-    width: clamp(300px, 50%, 1024px);
+    width: clamp(700px, 50%, 1024px);
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-radius: 2rem;
     border: 1px solid rgb(143, 143, 143);
 }
 
@@ -39,6 +44,12 @@ ul li {
     font-family: monospace;
 }
 
+h2 {
+    color: #fff;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
 .input_container {
     display: flex;
     gap: 0.5rem;
@@ -46,22 +57,23 @@ ul li {
 
 input {
     width: 100%;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     outline: none;
-    border-radius: 1rem;
     border: none;
     background-color: #4f4f4f;
     color: #fff;
+    font-size: 1rem;
     border: 1px solid rgb(143, 143, 143);
 }
 
 input::placeholder {
     color: #fff;
+    font-size: 1rem;
+    font-family: monospace;
 }
 
 button {
-    padding: 10px 20px;
-    border-radius: 1rem;
+    padding: 0.5rem 1rem;
     background-color: #4f4f4f;
     border: 1px solid rgb(143, 143, 143);
     color: #fff;
@@ -75,7 +87,6 @@ ul {
     justify-content: flex-start;
     gap: 0.5rem;
     padding: 0.5rem;
-    border-radius: 1rem;
     border: 1px solid rgb(143, 143, 143);
 
 }
@@ -83,13 +94,19 @@ ul {
 ul li {
     background-color: #333;
     color: #fff;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     text-align: left;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border: 1px solid rgb(143, 143, 143);
     /* white-space: pre; */
 }
 
+/* .wrapper {
+    display: flex;
+    gap: 0.5rem;
+} */
 
+ /* */ */

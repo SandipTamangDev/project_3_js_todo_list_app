@@ -156,3 +156,63 @@ Small helpers that avoid bugs.
 **B. A simple mental model of how todo apps work** (no code)
 
 Which one do you want?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perfect — so you want **two things**:
+
+1. **Delete task** → remove `<li>` from DOM.
+2. **Complete task** → move `<li>` from one `<ul>` to another.
+
+Here’s the **JS tools / methods / properties** you’ll need for both, no full code:
+
+---
+
+### 1. Event handling
+
+* `.addEventListener('click', callback)` → detect button clicks.
+* `e.target` → figure out which button was clicked.
+
+### 2. DOM traversal
+
+* `.closest('li')` → find the `<li>` that contains the clicked button.
+* `.parentNode` → alternate way to find the parent `<li>` or `<ul>`.
+
+### 3. DOM manipulation
+
+* `.remove()` → remove the `<li>` from DOM (delete).
+* `.appendChild(element)` → move the `<li>` to another `<ul>` (completed).
+* `.insertBefore(element, reference)` → optional, if you want to insert at top or middle.
+
+### 4. Optional helpers / checks
+
+* `.textContent` / `.innerText` → check button text (“Delete” vs “Completed”).
+* `.classList.add()` / `.classList.remove()` → optionally style completed tasks differently.
+* Arrays + `.splice()` → if you keep track of tasks in JS memory.
+
+---
+
+**Flow in words:**
+
+* Click a button → detect which one (`Delete` or `Completed`).
+* `.closest('li')` → get the task element.
+* If `Delete` → `.remove()` from DOM.
+* If `Completed` → `.appendChild()` into the completed `<ul>`.
+* Optional: update arrays or styles to match.
+
+You’ll see, **the same methods cover both actions**; only the last step changes.
+
+If you want, I can make a **tiny diagram showing flow for both buttons** so it’s crystal clear without code. Do you want me to?
