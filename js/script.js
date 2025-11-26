@@ -3,40 +3,48 @@ const todoList = document.getElementById('task-list');
 const addTaskBtn = document.getElementById('add');
 const completedList = document.getElementById('completed-task');
 
-
-addTaskBtn.addEventListener('click', ()=> {
-    const taskText = taskInput.value.trim();
-    if(taskText === "") return;
-
-    const todoItem = document.createElement("li");
-    todoItem.textContent = taskText;
-    
-    const buttonWrapper = document.createElement("div");
-    buttonWrapper.classList.add("button-wrapper");
-
+function deleteTask(todoItem, buttonWrapper) {
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.textContent = "Delete";
     todoItem.appendChild(deleteTaskBtn);
     deleteTaskBtn.addEventListener('click', ()=> {
         todoItem.remove();
     });
+    buttonWrapper.appendChild(deleteTaskBtn);
+}
 
+function completedTask(todoItem, buttonWrapper) {
     const completedTaskBtn = document.createElement("button");
     completedTaskBtn.textContent = "Completed";
     todoItem.appendChild(completedTaskBtn);
-
-    buttonWrapper.appendChild(deleteTaskBtn);
-    buttonWrapper.appendChild(completedTaskBtn);
-
     completedTaskBtn.addEventListener('click', () =>{
         completedList.appendChild(todoItem);
         buttonWrapper.remove();
-    }); 
+    });
+    
+    buttonWrapper.appendChild(completedTaskBtn);
+}
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if(taskText === "") return;
+
+    const todoItem = document.createElement("li");
+    todoItem.textContent = taskText;
+
+    const buttonWrapper = document.createElement("div");
+    buttonWrapper.classList.add("button-wrapper");
+
+    deleteTask(todoItem, buttonWrapper);
+    completedTask(todoItem, buttonWrapper);
 
     todoItem.appendChild(buttonWrapper);
     todoList.appendChild(todoItem);
     input.value = "";
-});
+}
+
+
+addTaskBtn.addEventListener('click', addTask);
 
 
 
