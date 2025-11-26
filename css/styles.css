@@ -7,14 +7,10 @@
 :root {
     --white: #C0D7BB;
     --black: #2F4B26;
-
-
-    
 }
 
 body, html {
     height: 100%;
-    /* background-color: #646464; */
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -40,12 +36,11 @@ section {
     background-color: var(--black);;
     padding: 20px;
     width: 100%;
-    max-width: 700px;
+    max-width: 1024px;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* border: 1px solid rgb(143, 143, 143); */
 }
 
 ul li {
@@ -59,7 +54,6 @@ h1 {
 }
 
 h2 {
-    /* color: #fff; */
     font-family: monospace;
     font-size: 1rem;
 }
@@ -67,68 +61,71 @@ h2 {
 .input_container {
     display: flex;
     gap: 0.5rem;
+    position: relative;
+
 }
 
 input {
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     outline: none;
     border: none;
-    /* background-color: #4f4f4f;
-    color: #fff; */
-    font-size: 1rem;
-    /* border: 1px solid rgb(143, 143, 143); */
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+
+}
+
+#add {
+    position: absolute;
+    right: 0;
 }
 
 input::placeholder {
-    /* color: #fff; */
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     font-family: monospace;
 }
 
 button {
-    font-size: clamp(0.5rem, 2vw, 1rem);
-    /* background-color: #4f4f4f; */
-    /* border: 1px solid rgb(143, 143, 143);
-    color: #fff; */
+    font-size: clamp(0.8rem, 2vw, 1rem);
     cursor: pointer;
-}
-
-button:hover {
-    /* background-color: #f4f4f4;
-    color: var(--black);; */
-    translate: transform()
+    padding: 0.5rem 1rem;
 }
 
 ul {
-    /* background-color: #4f4f4f; */
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.5rem;
-    /* border: 1px solid rgb(143, 143, 143); */
-
+    position: relative;
 }
 
 ul li {
-    /* background-color: var(--black);;
-    color: #fff; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     text-align: left;
-
     white-space: pre;
     overflow-x: auto;
+    padding: 0.5rem;
+      /* For Firefox */
+    scrollbar-width: none;
+  /* For WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  /* For Internet Explorer/Edge */
+    -ms-overflow-style: none;
 }
 
 .button-wrapper {
     display: flex;
-    gap: 0.5rem;
-    overflow-x: unset;
+    position: absolute;
+    right: 0;
 }
+
+
 
 .Dark {
     background-color: var(--white);;
@@ -150,12 +147,10 @@ ul li {
 
 .Dark section .container {
     background-color: var(--white);
-    /* border: 1px solid var(--black); */
 }
 
 .Light section .container {
     background-color: var(--black);
-    /* border: 1px solid var(--white); */
 }
 
 .Dark button {

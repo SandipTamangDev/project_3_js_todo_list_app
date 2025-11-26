@@ -24,6 +24,8 @@ function themeSwitcher() {
     });
 }
 
+
+
 function deleteTask(todoItem, buttonWrapper) {
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.textContent = "Delete";
@@ -34,13 +36,13 @@ function deleteTask(todoItem, buttonWrapper) {
     buttonWrapper.appendChild(deleteTaskBtn);
 }
 
-function completedTask(todoItem, buttonWrapper) {
+function completedTask(todoItem, buttonWrapper, deleteTaskBtn) {
     const completedTaskBtn = document.createElement("button");
     completedTaskBtn.textContent = "Completed";
     todoItem.appendChild(completedTaskBtn);
     completedTaskBtn.addEventListener('click', () =>{
         completedList.appendChild(todoItem);
-        buttonWrapper.remove();
+        completedTaskBtn.remove();
     });
     
     buttonWrapper.appendChild(completedTaskBtn);
