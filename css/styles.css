@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -102,9 +102,9 @@ ul li {
     padding: 0.5rem;
     border: 1px solid rgb(143, 143, 143);
     /* white-space: pre; */
-}
+/* } */
 
-.wrapper {
+/* .wrapper {
     display: flex;
     gap: 0.5rem;
-}
+} */ 

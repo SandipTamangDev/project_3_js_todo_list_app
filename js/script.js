@@ -1,46 +1,41 @@
-const input = document.getElementById('input');
-const taskList = document.getElementById('task-list');
-const add = document.getElementById('add');
+const taskInput = document.getElementById('input');
+const todoList = document.getElementById('task-list');
+const addTaskBtn = document.getElementById('add');
 const completedList = document.getElementById('completed-task');
-let deleteTask;
-let completedTask;
 
 
+addTaskBtn.addEventListener('click', ()=> {
+    let taskInput = taskInput.value.trim();
+    const taskText = taskInput;
+    if(taskText === "") return;
 
-add.addEventListener('click', ()=> {
-    let inputText = input.value;
-    const anotherVariable = inputText.replace(/ /g,"&nbsp;");;
-    console.log(anotherVariable);
-    if(anotherVariable === "") {
-        return;
-    }
+    const todoItem = document.createElement("li");
+    todoItem.textContent = taskText;
+    
+    const buttonWrapper = document.createElement("div");
+    buttonWrapper.classList.add("button-wrapper");
 
-    const list = document.createElement("li");
-    list.innerHTML = anotherVariable;
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("wrapper")
-
-    deleteTask = document.createElement("button");
-    deleteTask.textContent = "Delete";
-    list.appendChild(deleteTask);
-    deleteTask.addEventListener('click', ()=> {
-        list.remove();
+    const deleteTaskBtn = document.createElement("button");
+    deleteTaskBtn.textContent = "Delete";
+    todoItem.appendChild(deleteBtn);
+    deleteTaskBtn.addEventListener('click', ()=> {
+        todoItem.remove();
     });
 
-    completedTask = document.createElement("button");
-    completedTask.textContent = "Completed";
-    list.appendChild(completedTask);
+    const completedTaskBtn = document.createElement("button");
+    completedTaskBtn.textContent = "Completed";
+    todoItem.appendChild(completedTaskBtn);
 
-    wrapper.appendChild(deleteTask);
-    wrapper.appendChild(completedTask);
+    buttonWrapper.appendChild(deleteTaskBtn);
+    buttonWrapper.appendChild(completedTaskBtn);
 
-    completedTask.addEventListener('click', () =>{
-        completedList.appendChild(list);
-        wrapper.remove();
+    completedTaskBtn.addEventListener('click', () =>{
+        completedList.appendChild(todoItem);
+        buttonWrapper.remove();
     }); 
 
-    list.appendChild(wrapper);
-    taskList.appendChild(list);
+    todoItem.appendChild(buttonWrapper);
+    todoList.appendChild(todoItem);
     input.value = "";
 });
 
@@ -54,12 +49,81 @@ add.addEventListener('click', ()=> {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// working model with eventListeners
+
+// const input = document.getElementById('input');
+// const todoList = document.getElementById('task-list');
+// const add = document.getElementById('add');
+// const completedList = document.getElementById('completed-task');
+// let deleteTask;
+// let completedTask;
+
+
+
+// add.addEventListener('click', ()=> {
+//     let taskInput = input.value;
+//     const anotherVariable = taskInput.replace(/ /g,"&nbsp;");;
+//     console.log(anotherVariable);
+//     if(anotherVariable === "") {
+//         return;
+//     }
+
+//     const list = document.createElement("li");
+//     list.innerHTML = anotherVariable;
+//     const wrapper = document.createElement("div");
+//     wrapper.classList.add("wrapper")
+
+//     deleteTask = document.createElement("button");
+//     deleteTask.textContent = "Delete";
+//     list.appendChild(deleteTask);
+//     deleteTask.addEventListener('click', ()=> {
+//         list.remove();
+//     });
+
+//     completedTask = document.createElement("button");
+//     completedTask.textContent = "Completed";
+//     list.appendChild(completedTask);
+
+//     wrapper.appendChild(deleteTask);
+//     wrapper.appendChild(completedTask);
+
+//     completedTask.addEventListener('click', () =>{
+//         completedList.appendChild(list);
+//         wrapper.remove();
+//     }); 
+
+//     list.appendChild(wrapper);
+//     todoList.appendChild(list);
+//     input.value = "";
+// });
+
+
+
+
+
+
+
+
+
+// Problems that i went thought to make the working model with eventListeners.
+
 // let a = " "
 // let b = &nbsp
 
 // let data = [];
 // const input = document.getElementById('input');
-// const taskList = document.getElementById('task-list');
+// const todoList = document.getElementById('task-list');
 // const add = document.getElementById('add');
 // let deleteTask;
 // let completedTask;
@@ -85,8 +149,8 @@ add.addEventListener('click', ()=> {
 
 
 // function addTask() { 
-//     const inputText = input.value.trim();
-//     const anotherVariable = inputText;
+//     const taskInput = input.value.trim();
+//     const anotherVariable = taskInput;
 
 //     if(anotherVariable === "") {
 //         return;
@@ -96,7 +160,7 @@ add.addEventListener('click', ()=> {
 //     addDeleteButton(list)
 //     list.textContent = anotherVariable;
 
-//     taskList.appendChild(list);
+//     todoList.appendChild(list);
 //     input.value = "";
 // };
 
@@ -108,7 +172,7 @@ add.addEventListener('click', ()=> {
 
 
 // function addTask() {
-//     const inputText = input.value;
+//     const taskInput = input.value;
 
 //     alert
 
@@ -118,7 +182,7 @@ add.addEventListener('click', ()=> {
 
 //     li.appendChild('newContent');
 
-//     document.body.insertBefore(li, taskList);
+//     document.body.insertBefore(li, todoList);
 // }
 
 // deleteTask.addEventListener('click', () => {
@@ -127,22 +191,22 @@ add.addEventListener('click', ()=> {
 
 
 // function addTask() { 
-//     const inputText = input.value.trim();
-//     const anotherVariable = inputText;
+//     const taskInput = input.value.trim();
+//     const anotherVariable = taskInput;
 //     if(anotherVariable === "") {
 //         return;
 //     }
 //     const list = document.createElement("li");
 //     list.textContent = anotherVariable;
-//     taskList.appendChild(list);
+//     todoList.appendChild(list);
 //     input.value = "";
 
 
-//     let inputText = input.value;
-//     alert(inputText);
-//     const anotherVariable = inputText.replace(/ /g,"&nbsp;");;
+//     let taskInput = input.value;
+//     alert(taskInput);
+//     const anotherVariable = taskInput.replace(/ /g,"&nbsp;");;
 //     alert(anotherVariable)
-//     const anotherVariable = inputText;
+//     const anotherVariable = taskInput;
 //     console.log(anotherVariable);
 //     if(anotherVariable === "") {
 //         return;
@@ -173,7 +237,7 @@ add.addEventListener('click', ()=> {
 //     console.log(anotherVariable);
 
     
-//     taskList.appendChild(list);
+//     todoList.appendChild(list);
 //     console.log(list)
 //     console.log(list.textContent);
 
