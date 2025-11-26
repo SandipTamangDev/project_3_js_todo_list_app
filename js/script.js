@@ -5,8 +5,7 @@ const completedList = document.getElementById('completed-task');
 
 
 addTaskBtn.addEventListener('click', ()=> {
-    let taskInput = taskInput.value.trim();
-    const taskText = taskInput;
+    const taskText = taskInput.value.trim();
     if(taskText === "") return;
 
     const todoItem = document.createElement("li");
@@ -17,7 +16,7 @@ addTaskBtn.addEventListener('click', ()=> {
 
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.textContent = "Delete";
-    todoItem.appendChild(deleteBtn);
+    todoItem.appendChild(deleteTaskBtn);
     deleteTaskBtn.addEventListener('click', ()=> {
         todoItem.remove();
     });
@@ -104,7 +103,7 @@ addTaskBtn.addEventListener('click', ()=> {
 //     }); 
 
 //     list.appendChild(wrapper);
-//     todoList.appendChild(list);
+// todoList.appendChild(list);
 //     input.value = "";
 // });
 

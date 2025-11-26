@@ -1,4 +1,4 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -101,10 +101,10 @@ ul li {
     text-align: left;
     padding: 0.5rem;
     border: 1px solid rgb(143, 143, 143);
-    /* white-space: pre; */
-/* } */
+    white-space: pre;
+}
 
-/* .wrapper {
+.button-wrapper {
     display: flex;
     gap: 0.5rem;
-} */ 
+}
