@@ -54,8 +54,10 @@ h1 {
 }
 
 h2 {
+    color: #28AFB0;
     font-family: monospace;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
 }
 
 .input_container {
@@ -91,6 +93,11 @@ button {
     padding: 0.5rem 1rem;
 }
 
+button:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
 ul {
     display: flex;
     align-items: center;
@@ -110,13 +117,14 @@ ul li {
     overflow-x: auto;
     padding: 0.5rem;
       /* For Firefox */
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
   /* For WebKit browsers (Chrome, Safari) */
-    &::-webkit-scrollbar {
+    /* &::-webkit-scrollbar {
         display: none;
-    }
+    } */
   /* For Internet Explorer/Edge */
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none; */
+    cursor: pointer;
 }
 
 .button-wrapper {
@@ -159,10 +167,22 @@ ul li {
     border: 1px solid var(--black);
 }
 
+.Dark button:hover {
+    background-color: var(--black);
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
 .Light button {
     background-color: var(--black);
     border: 1px solid var(--white);
     color: var(--white);
+}
+
+.Light button:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
 }
 
 .Light input {
