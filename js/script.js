@@ -3,6 +3,27 @@ const todoList = document.getElementById('task-list');
 const addTaskBtn = document.getElementById('add');
 const completedList = document.getElementById('completed-task');
 
+function themeSwitcher() {
+    const themeSwitcherBtn = document.getElementById('theme-switcher');
+    let theme = localStorage.getItem("theme");
+    const getSystemTheme = () => window.matchMedia("(prefers-color-mode: dark)").match ? "Dark" : "Light"; 
+    if (!theme) theme = getSystemTheme();
+
+    themeSwitcherBtn.innerText = theme;
+
+    document.documentElement.classList.add(theme);
+
+    themeSwitcherBtn.addEventListener('click', ()=> {
+        theme = theme === "Light" ? "Dark" : "Light";
+        themeSwitcherBtn.innerText = theme;
+
+        document.documentElement.classList.toggle("Light", theme === "Light");
+        document.documentElement.classList.toggle("Dark", theme === "Dark");
+
+        localStorage.setItem("theme", theme);
+    });
+}
+
 function deleteTask(todoItem, buttonWrapper) {
     const deleteTaskBtn = document.createElement("button");
     deleteTaskBtn.textContent = "Delete";
@@ -51,6 +72,8 @@ taskInput.addEventListener('keypress', (e)=> {
         addTask()
     }
 });
+
+themeSwitcher()
 
 
 
