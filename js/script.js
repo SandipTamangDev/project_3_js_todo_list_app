@@ -3,6 +3,44 @@ const todoList = document.getElementById('task-list');
 const addTaskBtn = document.getElementById('add');
 const completedList = document.getElementById('completed-task');
 
+
+
+
+// function themeSwitcher() {
+//     const themeSwitcherBtn = document.getElementById('theme-switcher');
+//     let theme = localStorage.getItem("theme");
+
+//     const getSystemTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Light"; 
+//     if (!theme) theme = getSystemTheme();
+
+//     // Create icon element
+//     const icon = document.createElement('i');
+//     themeSwitcherBtn.innerHTML = ''; // clear any text
+//     themeSwitcherBtn.appendChild(icon);
+
+//     // Set initial icon
+//     icon.className = theme === "Light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+
+//     // Apply initial theme
+//     document.documentElement.classList.add(theme);
+
+//     themeSwitcherBtn.addEventListener('click', () => {
+//         theme = theme === "Light" ? "Dark" : "Light";
+
+//         // Update icon
+//         icon.className = theme === "Light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+
+//         // Toggle classes on <html>
+//         document.documentElement.classList.toggle("Light", theme === "Light");
+//         document.documentElement.classList.toggle("Dark", theme === "Dark");
+
+//         localStorage.setItem("theme", theme);
+//     });
+// }
+
+
+
+
 function themeSwitcher() {
     const themeSwitcherBtn = document.getElementById('theme-switcher');
     let theme = localStorage.getItem("theme");
@@ -15,7 +53,7 @@ function themeSwitcher() {
 
     themeSwitcherBtn.addEventListener('click', ()=> {
         theme = theme === "Light" ? "Dark" : "Light";
-        themeSwitcherBtn.innerText = theme;
+        themeSwitcherBtn.innerText= theme;
 
         document.documentElement.classList.toggle("Light", theme === "Light");
         document.documentElement.classList.toggle("Dark", theme === "Dark");
@@ -28,8 +66,11 @@ function themeSwitcher() {
 
 function deleteTask(todoItem, buttonWrapper) {
     const deleteTaskBtn = document.createElement("button");
-    deleteTaskBtn.textContent = "Delete";
-    todoItem.appendChild(deleteTaskBtn);
+    const deleteIcon = document.createElement('i');
+    deleteIcon.className = 'fa-solid fa-trash'; // correct
+
+    deleteTaskBtn.appendChild(deleteIcon);
+    deleteTaskBtn.classList.add("delete-task-btn");
     deleteTaskBtn.addEventListener('click', ()=> {
         todoItem.remove();
     });
@@ -38,8 +79,9 @@ function deleteTask(todoItem, buttonWrapper) {
 
 function completedTask(todoItem, buttonWrapper, deleteTaskBtn) {
     const completedTaskBtn = document.createElement("button");
-    completedTaskBtn.textContent = "Completed";
-    todoItem.appendChild(completedTaskBtn);
+    const completedIcon = document.createElement('i');
+    completedIcon.className = 'fa-solid fa-check';
+    completedTaskBtn.appendChild(completedIcon);
     completedTaskBtn.addEventListener('click', () =>{
         completedList.appendChild(todoItem);
         completedTaskBtn.remove();
@@ -64,6 +106,7 @@ function addTask() {
     todoItem.appendChild(buttonWrapper);
     todoList.appendChild(todoItem);
     input.value = "";
+    // localStorage.setItem()
 }
 
 

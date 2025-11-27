@@ -48,16 +48,14 @@ ul li {
 }
 
 h1 {
-    color: #28AFB0;
     font-family: monospace;
     font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 h2 {
-    color: #28AFB0;
     font-family: monospace;
     font-size: clamp(1rem, 2vw, 1.5rem);
-
+    text-align: left;
 }
 
 .input_container {
@@ -74,7 +72,6 @@ input {
     border: none;
     padding: 0.5rem 4rem 0.5rem 0.5rem;
     font-size: clamp(0.8rem, 2vw, 1rem);
-
 }
 
 #add {
@@ -90,7 +87,10 @@ input::placeholder {
 button {
     font-size: clamp(0.8rem, 2vw, 1rem);
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+
 }
 
 button:hover {
@@ -129,6 +129,7 @@ ul li {
 
 .button-wrapper {
     display: flex;
+    gap: 1px;
     position: absolute;
     right: 0;
 }
@@ -213,4 +214,9 @@ ul li {
 
 .Light input::placeholder {
     color: var(--white); 
+}
+
+
+.delete-task-btn {
+    border-right: 0;
 }
