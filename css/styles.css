@@ -1,61 +1,41 @@
+:root {
+    --primary-bg: #C7F9CC;
+    --secondary-bg: #80ED99;
+    --primary-txt: #22577A; 
+    --border: #57CC99;
+    --inter: "Inter", sans-serif;
+    --libre: "Libre Baskerville", serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --white: #C0D7BB;
-    --black: #2F4B26;
+    text-decoration: none;
+    list-style: none;
 }
 
 body, html {
     height: 100%;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    font-family: monospace
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.container {
-    background-color: var(--black);;
-    padding: 20px;
-    width: 100%;
-    max-width: 1024px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-ul li {
-    list-style: none;
 }
 
 h1 {
-    font-family: monospace;
-    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-family: var(--libre);
+    font-size: clamp(1.1rem, 2vw, 2.5rem)
 }
 
 h2 {
-    font-family: monospace;
+    font-family: var(--libre);
     font-size: clamp(1rem, 2vw, 1.5rem);
     text-align: left;
+}
+
+a {
+    color: var(--white);
+}
+
+q {
+    text-decoration: italic;
 }
 
 .input_container {
@@ -75,8 +55,7 @@ input {
 }
 
 #add {
-    position: absolute;
-    right: 0;
+    padding: 0.5rem;
 }
 
 input::placeholder {
@@ -84,139 +63,167 @@ input::placeholder {
     font-family: monospace;
 }
 
-button {
-    font-size: clamp(0.8rem, 2vw, 1rem);
+.btn {
+    background-color: var(--secondary-bg);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: clamp(0.7rem, 2vw, 3rem);
+    padding-right: clamp(0.7rem, 2vw, 3rem);
+    border-radius: 0.6rem;
+    border: none;
+    color: var(--primary-txt);
+    font-size: 0.8rem;
     cursor: pointer;
-    padding: 0.5rem;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
+    font-family: inherit;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn:active {
+    outline: 1px solid var(--primary-txt);
+}
+
+#today_page {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border);
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-txt);
+    font-family: var(--inter);
+    padding: 1rem;
+}
+
+.main_container {
+    background-color: var(--secondary-bg);
+    min-height: 100%;
+    border-radius: 2rem;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.content_container {
+    background-color: var(--primary-bg);
+    flex-grow: 1;
+    border-radius: 1.5rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: var(--secondary-bg);
+    padding: 0.3rem;
+    border-radius: 0.9rem;
+    max-width: 340px;
+    overflow-x: auto;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid var(--border);
 
 }
 
-button:hover {
-    background-color: var(--white);
-    color: var(--black);
+.nav_container {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
-ul {
+
+main {
+    display: flex;
+    align-items: flex-start;
+    max-width: 768px;
+    margin: 0 auto;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+.left {
+    flex-grow: 1;
+    width: 100%;
+    padding: 2rem 0;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    position: relative;
 }
 
-ul li {
+.left_container {
+    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+    min-height: 100%;
     width: 100%;
-    text-align: left;
-    white-space: pre;
-    overflow-x: auto;
-    padding: 0.5rem;
-      /* For Firefox */
-    /* scrollbar-width: none; */
-  /* For WebKit browsers (Chrome, Safari) */
-    /* &::-webkit-scrollbar {
-        display: none;
-    } */
-  /* For Internet Explorer/Edge */
-    /* -ms-overflow-style: none; */
-    cursor: pointer;
 }
 
-.button-wrapper {
+.left_container div {
     display: flex;
-    gap: 1px;
-    position: absolute;
-    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
 }
 
-
-
-.Dark {
-    background-color: var(--white);;
-    color: var(--black);;
+.center {
+    width: 100%;
+    display: none;
+    padding: 2rem 0;
 }
 
-.Light {
-    background-color: var(--black);;
-    color: var(--white);
+.center_container {
+    width: 100%;
 }
 
-.Dark li {
-    border: 1px solid var(--black);
+.right {
+    width: 100%;
+    display: none;
+    padding: 2rem 0;
+
 }
 
-.Light li {
-    border: 1px solid var(--white);
+.right_container {
+    width: 100%;
 }
 
-.Dark section .container {
-    background-color: var(--white);
+.active {
+    display: flex;
 }
 
-.Light section .container {
-    background-color: var(--black);
+.remove {
+    display: none;
 }
 
-.Dark button {
-    background-color: var(--white);
-    color: var(--black);
-    border: 1px solid var(--black);
-}
-
-.Dark button:hover {
-    background-color: var(--black);
-    border: 1px solid var(--white);
-    color: var(--white);
-}
-
-.Light button {
-    background-color: var(--black);
-    border: 1px solid var(--white);
-    color: var(--white);
-}
-
-.Light button:hover {
-    background-color: var(--white);
-    color: var(--black);
-    border: 1px solid var(--black);
-}
-
-.Light input {
-    background-color: var(--black);
-    color: var(--white);
-    border: 1px solid var(--white);
-}
-
-.Dark input {
-    background-color: var(--white);
-    color: var(--black);;
-    border: 1px solid var(--black);;
-}
-
-.Light #theme-switcher {
-    background-color: var(--white);;
-    color: var(--black);;
-}
-
-.Dark #theme-switcher {
-    background-color: var(--black);;
-    color: var(--white);;
-}
-
-.Light input::placeholder {
-    color: var(--black);; 
-}
-
-.Light input::placeholder {
-    color: var(--white); 
-}
-
-
-.delete-task-btn {
-    border-right: 0;
-}

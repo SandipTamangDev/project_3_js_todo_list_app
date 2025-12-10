@@ -3,44 +3,6 @@ const todoList = document.getElementById('task-list');
 const addTaskBtn = document.getElementById('add');
 const completedList = document.getElementById('completed-task');
 
-
-
-
-// function themeSwitcher() {
-//     const themeSwitcherBtn = document.getElementById('theme-switcher');
-//     let theme = localStorage.getItem("theme");
-
-//     const getSystemTheme = () => window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Light"; 
-//     if (!theme) theme = getSystemTheme();
-
-//     // Create icon element
-//     const icon = document.createElement('i');
-//     themeSwitcherBtn.innerHTML = ''; // clear any text
-//     themeSwitcherBtn.appendChild(icon);
-
-//     // Set initial icon
-//     icon.className = theme === "Light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
-
-//     // Apply initial theme
-//     document.documentElement.classList.add(theme);
-
-//     themeSwitcherBtn.addEventListener('click', () => {
-//         theme = theme === "Light" ? "Dark" : "Light";
-
-//         // Update icon
-//         icon.className = theme === "Light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
-
-//         // Toggle classes on <html>
-//         document.documentElement.classList.toggle("Light", theme === "Light");
-//         document.documentElement.classList.toggle("Dark", theme === "Dark");
-
-//         localStorage.setItem("theme", theme);
-//     });
-// }
-
-
-
-
 function themeSwitcher() {
     const themeSwitcherBtn = document.getElementById('theme-switcher');
     let theme = localStorage.getItem("theme");
@@ -62,12 +24,10 @@ function themeSwitcher() {
     });
 }
 
-
-
 function deleteTask(todoItem, buttonWrapper) {
     const deleteTaskBtn = document.createElement("button");
     const deleteIcon = document.createElement('i');
-    deleteIcon.className = 'fa-solid fa-trash'; // correct
+    deleteIcon.className = 'fa-solid fa-trash';
 
     deleteTaskBtn.appendChild(deleteIcon);
     deleteTaskBtn.classList.add("delete-task-btn");
@@ -106,7 +66,6 @@ function addTask() {
     todoItem.appendChild(buttonWrapper);
     todoList.appendChild(todoItem);
     input.value = "";
-    // localStorage.setItem()
 }
 
 
@@ -118,207 +77,40 @@ taskInput.addEventListener('keypress', (e)=> {
     }
 });
 
-themeSwitcher()
+themeSwitcher();
+
+
+const todayPageBtn = document.getElementById('today_page');
+const taskPageBtn = document.getElementById('task_page');
+const completedPageBtn = document.getElementById('completed_page');
+const chooseBtn = document.getElementById('choose');
+
+const leftPage = document.getElementById('left')
+const centerPage = document.getElementById('center')
+const rightPage = document.getElementById('right')
+
+
+todayPageBtn.addEventListener('click', () => {
+    leftPage.classList.remove('remove')
+    centerPage.classList.remove('active')
+    rightPage.classList.remove('active')
+});
+
+taskPageBtn.addEventListener('click', () => {
+    leftPage.classList.add('remove')
+    centerPage.classList.add('active')
+    rightPage.classList.remove('active')
+});
+
+chooseBtn.addEventListener('click', () => {
+    leftPage.classList.add('remove')
+    centerPage.classList.add('active')
+    rightPage.classList.remove('active')
+});
+
+completedPageBtn.addEventListener('click', () => {
+    leftPage.classList.add('remove')
+    centerPage.classList.remove('active')
+    rightPage.classList.add('active')
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// working model with eventListeners
-
-// const input = document.getElementById('input');
-// const todoList = document.getElementById('task-list');
-// const add = document.getElementById('add');
-// const completedList = document.getElementById('completed-task');
-// let deleteTask;
-// let completedTask;
-
-
-
-// add.addEventListener('click', ()=> {
-//     let taskInput = input.value;
-//     const anotherVariable = taskInput.replace(/ /g,"&nbsp;");;
-//     console.log(anotherVariable);
-//     if(anotherVariable === "") {
-//         return;
-//     }
-
-//     const list = document.createElement("li");
-//     list.innerHTML = anotherVariable;
-//     const wrapper = document.createElement("div");
-//     wrapper.classList.add("wrapper")
-
-//     deleteTask = document.createElement("button");
-//     deleteTask.textContent = "Delete";
-//     list.appendChild(deleteTask);
-//     deleteTask.addEventListener('click', ()=> {
-//         list.remove();
-//     });
-
-//     completedTask = document.createElement("button");
-//     completedTask.textContent = "Completed";
-//     list.appendChild(completedTask);
-
-//     wrapper.appendChild(deleteTask);
-//     wrapper.appendChild(completedTask);
-
-//     completedTask.addEventListener('click', () =>{
-//         completedList.appendChild(list);
-//         wrapper.remove();
-//     }); 
-
-//     list.appendChild(wrapper);
-// todoList.appendChild(list);
-//     input.value = "";
-// });
-
-
-
-
-
-
-
-
-
-// Problems that i went thought to make the working model with eventListeners.
-
-// let a = " "
-// let b = &nbsp
-
-// let data = [];
-// const input = document.getElementById('input');
-// const todoList = document.getElementById('task-list');
-// const add = document.getElementById('add');
-// let deleteTask;
-// let completedTask;
-// let deleteButton;
-// let list;
-// let wrapper = document.createElement("div");
-
-
-
-
-// function addDeleteTask(list) {
-//     const deleteButton = document.createElement("button");
-//     // deleteTask.classList.add("deleteTask")
-//     deleteButton.textContent = "Delete";
-//     // alert(deleteButton);
-
-//     deleteButton.addEventListener('click', ()=> {
-//         list.remove();
-//     });
-
-//     list.appendChild(deleteButton);
-// }
-
-
-// function addTask() { 
-//     const taskInput = input.value.trim();
-//     const anotherVariable = taskInput;
-
-//     if(anotherVariable === "") {
-//         return;
-//     }
-
-//     list = document.createElement("li");
-//     addDeleteButton(list)
-//     list.textContent = anotherVariable;
-
-//     todoList.appendChild(list);
-//     input.value = "";
-// };
-
-
-
-
-// add.addEventListener('click', addTask);
-// addDeleteTask();
-
-
-// function addTask() {
-//     const taskInput = input.value;
-
-//     alert
-
-//     const li = document.createElement("li");
-
-//     const newContent = document.createTextNode("testing testing");
-
-//     li.appendChild('newContent');
-
-//     document.body.insertBefore(li, todoList);
-// }
-
-// deleteTask.addEventListener('click', () => {
-//     remove.li
-// });
-
-
-// function addTask() { 
-//     const taskInput = input.value.trim();
-//     const anotherVariable = taskInput;
-//     if(anotherVariable === "") {
-//         return;
-//     }
-//     const list = document.createElement("li");
-//     list.textContent = anotherVariable;
-//     todoList.appendChild(list);
-//     input.value = "";
-
-
-//     let taskInput = input.value;
-//     alert(taskInput);
-//     const anotherVariable = taskInput.replace(/ /g,"&nbsp;");;
-//     alert(anotherVariable)
-//     const anotherVariable = taskInput;
-//     console.log(anotherVariable);
-//     if(anotherVariable === "") {
-//         return;
-//     }
-
-//     issue zone
-//     const list = document.createElement("li");
-
-//     data.push(anotherVariable);
-//     console.log(data);
-
-//     list.innerHTML = anotherVariable;
-//     list.textContent = anotherVariable;
-//     let containerButton = document.createElement('div');
-//     containerButton.classList.add("wrapper")
-
-
-
-//     completedTask = document.createElement("button");
-//     completedTask.classList.add("completedTask");
-//     completedTask.textContent = "Completed";
-//     containerButton.appendChild(completedTask);
-
-//     list.appendChild(containerButton);
-
-//     list.appendChild(anotherVariable);
-//     anotherVariable.innerHTML = anotherVariable.innerText.replaceAll(" ", "&nbsp;");
-//     console.log(anotherVariable);
-
-    
-//     todoList.appendChild(list);
-//     console.log(list)
-//     console.log(list.textContent);
-
-//     input.value = "";
-// };

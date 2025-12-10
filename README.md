@@ -1,94 +1,93 @@
-# Todo List (Vanilla JavaScript)
+# **Todo-List-App**
 
-## 📌 Overview
-This is a simple **Todo List app** built using **pure JavaScript, HTML, and CSS**.  
-It allows users to:
-
-- Add tasks
-- Mark tasks as completed
-- Delete tasks
-
-This project is perfect for beginners who want to **practice DOM manipulation, event handling, and managing app state** before moving on to bigger projects like Habit Trackers or API apps.
+Short description of the project and what it does.  
+Example: A small project built with HTML, CSS, and JavaScript to [do something].  
 
 ---
 
-## 📚 What to Learn Before Starting
-Before building this project, you should be comfortable with:
+## 📸 Screenshot
 
-1. **HTML Basics**
-   - Input elements (`<input>`), buttons (`<button>`), and lists (`<ul>` / `<li>`)
-
-2. **CSS Basics**
-   - Styling buttons, lists, completed tasks (line-through)
-   - Layout basics for a clean interface
-
-3. **JavaScript Basics**
-   - Variables and arrays (`let tasks = []`)
-   - Functions and calling them on events
-   - Event listeners (`element.addEventListener("click", callback)`)
-
-4. **DOM Manipulation**
-   - Selecting elements (`document.querySelector`, `getElementById`)
-   - Creating and removing elements dynamically
-   - Updating text or styles programmatically
-
-5. **Simple State Management**
-   - Keeping a list of tasks in an array
-   - Updating the array when tasks are added, completed, or deleted
-   - Re-rendering the UI from the array
+![Project Preview](./screenshot.png)
 
 ---
 
-## 🎯 Features
-- **Add Tasks**: Enter a task in the input and click “Add”  
-- **Mark as Complete**: Click a task to mark it done (line-through)  
-- **Delete Tasks**: Remove tasks using a delete button  
-
-Optional enhancements for later:
-- Filter by **All / Completed / Active**
-- Persist tasks using **LocalStorage**
-- Sort tasks by priority or creation date
+## **Project Goals**
+- List 1–3 learning objectives or goals  
+- Example: Understand DOM manipulation  
+- Example: Learn to toggle CSS classes  
 
 ---
 
-## 🧪 Testing Checklist
-Before sharing your project, make sure:
-
-- Adding multiple tasks works correctly
-- Clicking a task marks it as completed
-- Delete button removes the correct task
-- UI updates correctly for every action
-- No errors appear in the console
+## **Features**
+- Feature 1 (e.g., Button click interaction)  
+- Feature 2 (e.g., Responsive layout)  
+- Feature 3 (Optional)  
 
 ---
 
-## 📂 Folder Structure
-todo-list/
-│
-├── index.html # HTML layout
-├── style.css # CSS styling
-└── app.js # JavaScript logic
-
-
+## **Tech Stack**
+- HTML  
+- CSS  
+- JavaScript  
 
 ---
 
-## 🚀 How to Run
-1. Clone or download the repository
-2. Open `index.html` in a web browser
-3. Start adding, completing, and deleting tasks
+## **Folder Structure**
+
+```
+
+project_folder_name/
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── index.html
+├── README.md
+└── screenshot.png
+
+```
+
+> Adjust this to your actual project structure.
 
 ---
 
-## 🤝 Contributing
-This project is beginner-friendly.  
-You can contribute by:
+## **How It Works**
+You can see the project live [here](LIVE_PROJECT_LINK).  
 
-- Improving the UI/UX  
-- Adding new features like filters, LocalStorage, or animations  
-- Cleaning up the code or making it more modular
+- Step 1: What the user does (e.g., open `index.html`)  
+- Step 2: How interaction works (e.g., click a button to toggle)  
+- Step 3: Any other key behavior (e.g., localStorage saves state)  
 
 ---
 
-## 📜 License
-MIT License — free for personal and commercial use.
+## **What I Learned**
+- HTML: Key learning points  
+- CSS: Key learning points  
+- JS: Key learning points  
+
+---
+
+## **Future Improvements**
+- Idea 1  
+- Idea 2  
+- Idea 3  
+
+---
+
+## Author
+[Your Name](YOUR_PORTFOLIO_LINK)
+```
+
+---
+
+This covers:
+
+* Title & description
+* Screenshot
+* Goals & features
+* Tech stack
+* Folder structure
+* How it works (with live demo link)
+* Learnings
+* Future improvements
+* Author link
